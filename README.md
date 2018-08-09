@@ -1,2 +1,2 @@
-# asongClient
-A Song miniProgram Client
+# asongApi
+apis for wx asong
