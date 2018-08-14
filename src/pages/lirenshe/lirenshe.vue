@@ -1,5 +1,5 @@
 <template>
-	<div>书籍</div>
+	<div>丽人社</div>
 </template>
 
 <script >

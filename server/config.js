@@ -3,10 +3,10 @@ const CONF = {
     rootPathname: '',
 
     // 微信小程序 App ID
-    appId: '',
+    appId: 'wx22cc802fdfb043d4',
 
     // 微信小程序 App Secret
-    appSecret: '',
+    appSecret: 'a5b637e65eaeccdf66a363178c16511d',
 
     serverHost: 'localhost',
     tunnelServerUrl: '',
@@ -15,7 +15,6 @@ const CONF = {
     qcloudAppId: '1257257713',
     qcloudSecretId: 'AKID86qMdgU4RkpeEYASVKuHQKzQcZHkkzkH',
     qcloudSecretKey: 'SfeOtBE2bw2uXv51jFXbWDfuugEYeV8X',
-    wxMessageToken: '',
 
     // 是否使用腾讯云代理登录小程序
     useQcloudLogin: true,
@@ -30,7 +29,7 @@ const CONF = {
         port: 3306,
         user: 'root',
         db: 'cAuth',
-        pass: 'zhu123456',
+        pass: '',
         char: 'utf8mb4'
     },
 
@@ -39,7 +38,7 @@ const CONF = {
          * 地区简称
          * @查看 https://cloud.tencent.com/document/product/436/6224
          */
-        region: 'ap-guangzhou',
+        region: 'ap-chengdu',
         // Bucket 名称
         fileBucket: 'qcloudtest',
         // 文件夹
@@ -48,7 +47,7 @@ const CONF = {
 
     // 微信登录态有效期
     wxLoginExpires: 7200,
-    wxMessageToken: 'abcdefgh'
+    wxMessageToken: 'weixinmsgToken'
 }
 
 module.exports = CONF

@@ -1,29 +1,14 @@
-<script>
 
+<script>
+import qcloud from "wafer2-client-sdk";
 import config from "./config.js";
 import {get} from "./util.js"
 export default {
-  async created () {
-    // 调用API从本地缓存中获取数据
-    // const logs = wx.getStorageSync('logs') || []
-    // logs.unshift(Date.now())
-    // wx.setStorageSync('logs', logs)
 
-    // console.log('app created and cache logs by setStorageSync')
-    // console.log("启动")
-    // wx.request({
-    //   url: config.host + '/weapp/test',
+    created () {
+      console.log("小程序启动了");
       
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   success: function(res) {
-    //     console.log(res.data)
-    //   }
-    // })
-    const res = await get("/weapp/test");
-    console.log("封装",res)
-  }
+    }
 }
 </script>
 

@@ -14,3 +14,11 @@ export function get(url){
 		})
 	})
 }
+
+export function showSuccess(text){
+	wx.showToast({
+	  title: text,
+	  icon: 'success',
+	  duration: 2000
+	})
+}

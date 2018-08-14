@@ -1,6 +1,6 @@
 
 import Vue from 'vue'
-import Me from './Me'
+import me from './me'
 
-const app = new Vue(Me)
+const app = new Vue(me)
 app.$mount()
