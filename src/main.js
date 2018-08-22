@@ -15,7 +15,7 @@ export default {
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
+      navigationBarTitleText: 'A song 丽人社',
       navigationBarTextStyle: 'black'
     },
     "tabBar":{

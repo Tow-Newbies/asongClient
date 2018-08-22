@@ -32,9 +32,7 @@ router.get('/message', controllers.message.get)
 // POST 用来处理微信转发过来的客服消息
 router.post('/message', controllers.message.post)
 
-//自己添加的路由
-router.get("/test",async ctx => {
-  ctx.body = 'koa test';
-})
+// 自定义测试路由
+router.get('/detail',controllers.detail)
 
 module.exports = router

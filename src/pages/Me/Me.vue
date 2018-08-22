@@ -2,39 +2,77 @@
 	<div>
 		<div>个人</div>
 	 <button  open-type="getUserInfo" @getuserinfo="bindGetUserInfo">授权登录</button>
+	 <button @click = "scanHandle">扫码</button>
+	 <button @click = "userUrltest">userUrltest</button>
+
 	</div>
 </template>
 
 <script >
 	import {showSuccess} from "@/util.js";
+	import qcloud from "wafer2-client-sdk";
+	import config from "@/config";
 	export default  {
 		methods:{
 			bindGetUserInfo(e){
-				let user = wx.getStorageSync("userInfo");
-				if(user){
-					console.log("已有用户信息");
-				}else{
-					console.log(e);
-					// wx.setStorageSync("userInfo",e.mp.detail.rawData);
-					// showSuccess("获取用户信息成功");
-				}
 
+				//npm demo code
+				const session = qcloud.Session.get()
+
+			    if (session) {
+			        // 第二次登录
+			        // 或者本地已经有登录态
+			        // 可使用本函数更新登录态
+			        qcloud.loginWithCode({
+			            success: res => {
+			                //this.setData({ userInfo: res, logged: true })
+			                // util.showSuccess('登录成功')
+			                console.log("用户信息：",res)
+			            },
+			            fail: err => {
+			                console.error("错误：",err)
+			                // util.showModel('登录错误', err.message)
+			            }
+			        })
+			    } else {
+		        // 首次登录
+			        qcloud.login({
+			            success: res => {
+			                // this.setData({ userInfo: res, logged: true })
+			                // util.showSuccess('登录成功')
+			                console.log("用户信息：",res)
+			            },
+			            fail: err => {
+			                console.error("错误：",err)
+			                // util.showModel('登录错误', err.message)
+			            }
+			        })
+			    }
+
+			},
+			scanHandle(){
+				wx.scanCode({
+				  success: (res) => {
+				    console.log(res)
+				  }
+				})
+			},
+			userUrltest(){
+				qcloud.request({
+				    url: config.service.requestUrl,
+				    success: function (response) {
+				        console.log(response);
+				    },
+				    fail: function (err) {
+				        console.log(err);
+				    }
+				});
 			}
+		},
+		created(){
+
+		  qcloud.setLoginUrl(config.service.loginUrl)
 		}
-		// created(){
-		// 	 wx.getSetting({
-		//       success: function(res){
-		//         if (res.authSetting['scope.userInfo']) {
-		//           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-		//           wx.getUserInfo({
-		//             success: function(res) {
-		//               console.log("res.userInfo:",res.userInfo)
-		//             }
-		//           })
-		//         }
-		//       }
-		//     })
-		// }
 		
 	}
 </script>

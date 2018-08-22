@@ -1,21 +1,30 @@
 <template>
 	<div>
-		<div>活动</div>
-		<div>
-			<open-data type="userNickName"></open-data>
-			<open-data type="userAvatarUrl"></open-data>
-			<open-data type="userGender" lang="zh_CN"></open-data>
-			<P>{{a}}</P>
-		</div>
+		<activity v-for="acvtivity in activities" :key="activities.id" v-bind="acvtivity"></activity>
 	</div>
 </template>
 
 <script >
-	module.exports = {
+	import activity from "@/components/activity";
+	export default {
+		components:{
+			activity
+		},
 		data:function(){
 			return {
 				userInfo:{},
-				a:1
+				a:1,
+				activities:[{
+					title:"美白针",
+					time:"20180505",
+					location:"黄土村",
+					id:"19"
+				},{
+					title:"美白针",
+					time:"20180505",
+					location:"黄土村",
+					id:"11"
+				}]
 			}
 		},
 		created(){

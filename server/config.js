@@ -3,18 +3,10 @@ const CONF = {
     rootPathname: '',
 
     // 微信小程序 App ID
-    appId: 'wx22cc802fdfb043d4',
+    appId: '',
 
     // 微信小程序 App Secret
-    appSecret: 'a5b637e65eaeccdf66a363178c16511d',
-
-    serverHost: 'localhost',
-    tunnelServerUrl: '',
-    tunnelSignatureKey: '',
-    // 腾讯云相关配置可以查看云 API 秘钥控制台：https://console.qcloud.com/capi
-    qcloudAppId: '1257257713',
-    qcloudSecretId: 'AKID86qMdgU4RkpeEYASVKuHQKzQcZHkkzkH',
-    qcloudSecretKey: 'SfeOtBE2bw2uXv51jFXbWDfuugEYeV8X',
+    appSecret: '',
 
     // 是否使用腾讯云代理登录小程序
     useQcloudLogin: true,
@@ -38,7 +30,7 @@ const CONF = {
          * 地区简称
          * @查看 https://cloud.tencent.com/document/product/436/6224
          */
-        region: 'ap-chengdu',
+        region: 'ap-guangzhou',
         // Bucket 名称
         fileBucket: 'qcloudtest',
         // 文件夹
@@ -47,7 +39,16 @@ const CONF = {
 
     // 微信登录态有效期
     wxLoginExpires: 7200,
-    wxMessageToken: 'weixinmsgToken'
+
+    serverHost: 'localhost',
+    tunnelServerUrl: '',
+    tunnelSignatureKey: '27fb7d1c161b7ca52d73cce0f1d833f9f5b5ec89',
+      // 腾讯云相关配置可以查看云 API 秘钥控制台：https://console.cloud.tencent.com/capi
+    qcloudAppId: '1257257713',
+    qcloudSecretId: 'AKID86qMdgU4RkpeEYASVKuHQKzQcZHkkzkH',
+    qcloudSecretKey: 'SfeOtBE2bw2uXv51jFXbWDfuugEYeV8X',
+    wxMessageToken: 'weixinmsgtoken',
+    networkTimeout: 30000
 }
 
 module.exports = CONF
