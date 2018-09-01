@@ -5,6 +5,9 @@ const response = require('./middlewares/response')
 const bodyParser = require('koa-bodyparser')
 const config = require('./config')
 
+// 静态文件地址
+app.use(require('koa-static')(__dirname + '/public'));
+
 // 使用响应处理中间件
 app.use(response)
 

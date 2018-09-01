@@ -13,25 +13,23 @@
 		data:function(){
 			return {
 				userInfo:{},
-				a:1,
 				activities:[{
 					title:"美白针",
 					time:"20180505",
 					location:"黄土村",
+					imageUrl:"/images/activity1.jpg",
 					id:"19"
 				},{
 					title:"美白针",
 					time:"20180505",
 					location:"黄土村",
+					imageUrl:"/images/activity1.jpg",
 					id:"11"
 				}]
 			}
 		},
 		created(){
-			console.log("user:",wx.getStorageSync("userInfo"))
-			//this.userInfo = wx.getStorageSync("userInfo");
-			this.a = 20;
-			// 
+			
 		}
 	}
 </script>
